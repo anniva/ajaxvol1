@@ -12,15 +12,23 @@ function fetchJSONFile(url, returnData) {
                         }
                 }
         }
-        request.open('GET', 'https://api.github.com/users/anniva', true);
+        request.open('GET', url, true);
         request.send();
 }
 
 
 function returnData (jsonData) {
-        console.log(jsonData.name);
+        //console.log(jsonData.name);
         var name = jsonData.name;
         document.getElementById('name').innerHTML = name;
 }
 
-fetchJSONFile('https://api.github.com/users/heron2014', returnData);
+var button = document.getElementById('button'); //
+
+button.addEventListener('click', function(){
+  var user = document.getElementById("input").value;
+
+fetchJSONFile("https://api.github.com/users/"+ user,returnData);
+
+});
+

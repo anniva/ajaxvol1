@@ -15,7 +15,7 @@ document.getElementById('response').innerHTML = request.responseText;
 
 var request= new XMLHttpRequest(); 
 
-request.open('GET','text.txt', true); 
+request.open('GET','text.txt', true); // .open(method, url, async) 
 
 request.send();
 
